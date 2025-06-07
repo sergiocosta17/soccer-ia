@@ -1,3 +1,5 @@
+import './Funcionalidades.css';
+
 const Funcionalidades = () => {
   return (
     <section id="funcionalidades" className="section">

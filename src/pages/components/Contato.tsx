@@ -1,3 +1,5 @@
+import './Contato.css';
+
 const Contato = () => {
   return (
     <section id="contato" className="section">
