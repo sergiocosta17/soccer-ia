@@ -17,9 +17,9 @@ const handleLogout = () => {
             Soccer IA ⚽
           </Link>
           <nav className="nav-links">
-            <Link to="/home#funcionalidades" className="nav-link">Funcionalidades</Link>
-            <Link to="/home#sobre" className="nav-link">Sobre</Link>
-            <Link to="/home#contato" className="nav-link">Contato</Link>
+            <Link to="/funcionalidades" className="nav-link">Funcionalidades</Link>
+            <Link to="/sobre" className="nav-link">Sobre</Link>
+            <Link to="/contato" className="nav-link">Contato</Link>
           </nav>
           <button
             className="btn-logout"
