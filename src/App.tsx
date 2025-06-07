@@ -2,6 +2,9 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Chat from './pages/chat/Chat';
+import Funcionalidades from './pages/components/Funcionalidades';
+import Sobre from './pages/components/Sobre';
+import Contato from './pages/components/Contato';
 
 const App = () => (
   <BrowserRouter>
@@ -9,6 +12,9 @@ const App = () => (
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/chat" element={<Chat />} />
+      <Route path="/funcionalidades" element={<Funcionalidades />} />
+      <Route path="/sobre" element={<Sobre />} />
+      <Route path="/contato" element={<Contato />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   </BrowserRouter>
