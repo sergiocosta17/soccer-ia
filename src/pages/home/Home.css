@@ -147,12 +147,12 @@ body {
 }
 
 .footer {
-  background-color: var(--primary-color); /* #243b55 */
-  color: var(--white);                    /* #ffffff */
+  background-color: var(--primary-color);
+  color: var(--white);
   font-size: 0.9rem;
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #1f3550; /* uma borda um pouco mais escura para contraste */
+  border-top: 1px solid #1f3550;
 }
 
 
