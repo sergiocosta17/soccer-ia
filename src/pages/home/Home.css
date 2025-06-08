@@ -147,13 +147,14 @@ body {
 }
 
 .footer {
-  background-color: var(--white);
-  color: var(--primary-color);
+  background-color: var(--primary-color); /* #243b55 */
+  color: var(--white);                    /* #ffffff */
   font-size: 0.9rem;
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #1f3550; /* uma borda um pouco mais escura para contraste */
 }
+
 
 @keyframes fadeInUp {
   0% {

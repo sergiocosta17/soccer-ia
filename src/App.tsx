@@ -5,6 +5,9 @@ import Chat from './pages/chat/Chat';
 import Funcionalidades from './pages/components/Funcionalidades';
 import Sobre from './pages/components/Sobre';
 import Contato from './pages/components/Contato';
+import './pages/components/Funcionalidades.css';
+import './pages/components/Sobre.css';
+import './pages/components/Contato.css';
 
 const App = () => (
   <BrowserRouter>

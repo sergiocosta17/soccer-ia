@@ -1,32 +1,67 @@
-.section {
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 40px auto;
+.funcionalidades {
+  background: #f8f9fc;
+  padding: 7.1rem 1rem;
 }
 
-.section h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 2rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.section p {
+.title {
   text-align: center;
+  font-size: 2.5rem;
+  color: #004aad;
+  margin-bottom: 1rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.2rem;
   color: #555;
-  margin-bottom: 20px;
-  font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
-.section ul {
-  list-style-type: disc;
-  padding-left: 20px;
+.highlight {
+  color: #00b894;
+  font-weight: bold;
 }
 
-.section li {
-  margin-bottom: 10px;
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+  color: #004aad;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
   color: #333;
-  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
 }
