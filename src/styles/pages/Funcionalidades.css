@@ -1,0 +1,40 @@
+.funcionalidades {
+  background: #f8f9fc;
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+  color: #243b55;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.feature-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

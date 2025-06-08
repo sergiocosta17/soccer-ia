@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import './Chat.css';
-
+import '../styles/pages/Chat.css';
 
 type Message = {
   from: 'user' | 'Soccer IA';
@@ -33,7 +32,6 @@ const Chat = () => {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-
     setMessages(prev => [...prev, { from: 'user', text: input }]);
 
     try {
@@ -44,38 +42,27 @@ const Chat = () => {
       });
 
       const data = await res.json();
-
       setMessages(prev => [...prev, { from: 'Soccer IA', text: data.answer }]);
       setInput('');
-    } catch (error) {
+    } catch {
       setMessages(prev => [...prev, { from: 'Soccer IA', text: 'Erro ao se comunicar com o servidor.' }]);
     }
   };
 
-  const clearConversation = () => {
-    setMessages([]);
-  };
-
+  const clearConversation = () => setMessages([]);
   const deleteHistory = async () => {
-
     try {
-
-  const res = await fetch('http://localhost:3000/historico', { method: 'DELETE' });
-
-    if (res.ok) {
-      setMessages([]);
-    } else {
-      alert('Falha ao apagar histórico no servidor.');
+      const res = await fetch('http://localhost:3000/historico', { method: 'DELETE' });
+      res.ok ? setMessages([]) : alert('Falha ao apagar histórico.');
+    } catch {
+      alert('Erro ao se comunicar com o servidor.');
     }
-    } catch (error) {
-      alert('Erro ao se comunicar com o servidor:');
-    }
-};
+  };
 
   return (
     <div className="page-container">
       <div className="back-button">
-          <Link to="/home" className="back-link">&#8592;</Link>
+        <Link to="/home" className="back-link">&#8592;</Link>
       </div>
       <div className="content-wrap chat-content-wrap">
         <h1 className="animated-title">Soccer IA - Chat</h1>
@@ -95,20 +82,12 @@ const Chat = () => {
             onKeyDown={e => e.key === 'Enter' && sendMessage()}
             className="chat-input"
           />
-          <button onClick={sendMessage} className="btn-send">
-            Enviar
-          </button>
+          <button onClick={sendMessage} className="btn-send">Enviar</button>
         </div>
         <div className="chat-buttons">
-          <button onClick={clearConversation} className="btn-action">
-            Limpar Conversa
-          </button>
-          <button onClick={loadHistory} className="btn-action">
-            Ver Histórico
-          </button>
-          <button onClick={deleteHistory} className="btn-action delete">
-            Apagar Histórico
-          </button>
+          <button onClick={clearConversation} className="btn-action">Limpar Conversa</button>
+          <button onClick={loadHistory} className="btn-action">Ver Histórico</button>
+          <button onClick={deleteHistory} className="btn-action delete">Apagar Histórico</button>
         </div>
       </div>
     </div>

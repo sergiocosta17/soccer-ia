@@ -1,13 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Login from './pages/login/Login';
-import Home from './pages/home/Home';
-import Chat from './pages/chat/Chat';
-import Funcionalidades from './pages/components/Funcionalidades';
-import Sobre from './pages/components/Sobre';
-import Contato from './pages/components/Contato';
-import './pages/components/Funcionalidades.css';
-import './pages/components/Sobre.css';
-import './pages/components/Contato.css';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Chat from './pages/Chat';
+import Funcionalidades from './pages/Funcionalidades';
+import Sobre from './pages/Sobre';
+import Contato from './pages/Contato';
+import './styles/globals.css';
 
 const App = () => (
   <BrowserRouter>
@@ -18,7 +16,8 @@ const App = () => (
       <Route path="/funcionalidades" element={<Funcionalidades />} />
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/contato" element={<Contato />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      {/* Rota fallback */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </BrowserRouter>
 );

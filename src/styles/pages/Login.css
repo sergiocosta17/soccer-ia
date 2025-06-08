@@ -1,9 +1,16 @@
+:root {
+  --color-primary: #243b55;
+  --color-secondary: #4a6fa5;
+  --color-text: #333;
+  --color-white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #243b55;
-  color: #fff;
-  transition: background-color 0.3s ease;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  min-height: 100vh;
 }
 
 .loginPage {
@@ -11,16 +18,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--color-primary);
 }
 
 .formContainer {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.92);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: fadeInUp 0.8s ease;
 }
 
 .formContainer:hover {
@@ -28,9 +36,11 @@ body {
   transform: translateY(-4px);
 }
 
-h2 {
+.loginTitle {
   margin-bottom: 10px;
-  color: #222;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .subtitle {
@@ -56,29 +66,32 @@ input {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 16px;
-  transition: border-color 0.3s;
 }
 
 input:focus {
-  border-color: #243b55;
+  border-color: var(--color-primary);
   outline: none;
 }
 
 button[type='submit'] {
   padding: 12px;
-  background-color: #243b55;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 24px;
 }
 
 button[type='submit']:hover {
   background-color: #1a2a3f;
   transform: scale(1.05);
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
 }
 
 @keyframes fadeInUp {
@@ -90,8 +103,4 @@ button[type='submit']:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.formContainer {
-  animation: fadeInUp 0.8s ease;
 }

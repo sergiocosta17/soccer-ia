@@ -10,31 +10,27 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-height: 90vh;
   background-image: url('/campo-futebol.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-text);
-  background-color: var(--color-bg);
 }
 
 .chat-content-wrap {
   width: 700px;
   max-width: 700px;
   margin: 6rem auto 4rem;
-  padding: 0.5rem 1.5rem;
+  padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   gap: 1.5rem;
   animation: fadeIn 1s ease forwards;
-  box-sizing: border-box;
 }
 
 .animated-title {
@@ -42,7 +38,6 @@
   color: var(--color-primary);
   text-align: center;
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .chat-messages {
@@ -56,7 +51,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-
   scrollbar-width: thin;
   scrollbar-color: var(--color-secondary) transparent;
 }
@@ -65,24 +59,17 @@
   width: 8px;
 }
 
-.chat-messages::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .chat-messages::-webkit-scrollbar-thumb {
   background-color: var(--color-secondary);
   border-radius: 8px;
-  border: 2px solid transparent;
-  background-clip: content-box;
 }
 
 .chat-message {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   max-width: 75%;
-  word-break: break-word;
-  line-height: 1.4;
   font-size: 1rem;
+  word-break: break-word;
 }
 
 .chat-message.user {
@@ -102,7 +89,6 @@
 .chat-input-area {
   display: flex;
   height: 66px;
-  width: 100%;
   gap: 1rem;
 }
 
@@ -112,46 +98,22 @@
   font-size: 1rem;
   border: 2px solid var(--color-secondary);
   border-radius: 8px;
-  outline-offset: 2px;
   background: var(--color-white);
-  color: var(--color-text);
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.chat-input::placeholder {
-  color: #999999;
-}
-
-.chat-input:focus {
-  border-color: var(--color-primary);
-  background: #f0f4ff;
-  outline: 2px solid var(--color-primary);
 }
 
 .btn-send {
-  padding: 0.3rem 2rem;
   height: 45.5px;
-  font-size: 0.9rem;
   background-color: var(--color-secondary);
   color: var(--color-white);
   border-radius: 8px;
-  cursor: pointer;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
   border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  user-select: none;
-}
-
-.btn-chat:hover,
-.btn-chat:focus {
-  background-color: #355d8c;
-  transform: scale(1.05);
-  outline: none;
+  cursor: pointer;
 }
 
 .chat-buttons {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -165,16 +127,12 @@
   color: var(--color-secondary);
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  user-select: none;
+  font-weight: bold;
 }
 
-.btn-action:hover,
-.btn-action:focus {
+.btn-action:hover {
   background-color: var(--color-secondary);
-  color: var(--color-white);
-  outline: none;
+  color: #fff;
 }
 
 .btn-action.delete {
@@ -182,52 +140,22 @@
   color: #9c1c1c;
 }
 
-.btn-action.delete:hover,
-.btn-action.delete:focus {
+.btn-action.delete:hover {
   background-color: #9c1c1c;
-  color: var(--color-white);
-}
-
-.footer {
-  background-color: var(--color-white);
-  border-top: 1px solid #ddd;
-  padding: 1rem 0;
-  color: var(--color-primary);
-  font-size: 0.9rem;
-  text-align: center;
-  user-select: none;
+  color: #fff;
 }
 
 .back-button {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 10;
 }
 
 .back-link {
-  text-decoration: none;
-  color: var(--color-primary);
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.back-link:hover,
-.back-link:focus {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
 }
