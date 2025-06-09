@@ -27,7 +27,7 @@ app.post('/chat', async (req, res) => {
 
   try {
     const geminiResponse = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         contents: [
           { parts: [{ text: message }] }
@@ -36,7 +36,9 @@ app.post('/chat', async (req, res) => {
       { headers: { 'Content-Type': 'application/json' } }
     );
 
-    const aiAnswer = geminiResponse.data.candidates[0].content.parts[0].text;
+    let aiAnswer = geminiResponse.data.candidates[0].content.parts[0].text;
+
+    aiAnswer = aiAnswer.trim();
 
     const chatEntry = new Chat({ question: message, answer: aiAnswer });
     await chatEntry.save();
